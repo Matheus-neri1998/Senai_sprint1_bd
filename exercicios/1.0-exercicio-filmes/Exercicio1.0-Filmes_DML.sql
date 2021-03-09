@@ -6,6 +6,8 @@ INSERT INTO Generos (Nome)
 VALUES              ('Ação')
                     ,('Romance');
 
+INSERT INTO Generos  (Nome)
+VALUES					 ('Drama');
 					
 INSERT INTO Filmes (Titulo, idGenero)
 VALUES             ('Rambo', 1)

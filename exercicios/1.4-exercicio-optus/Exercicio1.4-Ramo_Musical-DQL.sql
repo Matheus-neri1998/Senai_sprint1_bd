@@ -1,13 +1,19 @@
--- Exercício 1.4 > Ramo Musical - DQL --  
+-- Exercício 1.4 > Ramo Musical - DQL/JOINS --  
 
 USE Optus
 
-SELECT Senha, Permissao FROM Usuarios;
+SELECT * FROM Albuns -- Tabela Albuns
 
-SELECT DataLancamento FROM Albuns;
+SELECT * FROM AlbunsEstilos -- Tabela AlbunsEstilos
 
-SELECT Email, Senha FROM Usuarios;
+SELECT * FROM Usuarios -- Tabela Usuarios
 
-SELECT Ativo FROM Albuns
-SELECT Nome FROM Artistas; 
-SELECT Nome FROM Estilos
+SELECT * FROM Estilos -- Tabela Estilos
+
+SELECT * FROM Artistas -- Tabela Artistas
+
+-- INNER JOIN
+
+SELECT Artistas.Nome AS Artista
+FROM Artistas
+

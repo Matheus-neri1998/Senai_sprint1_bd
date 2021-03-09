@@ -1,5 +1,5 @@
 /*
-	Exercício 1.2 - Veículos
+	Exercício 1.2 - Veículos - DDL --
 */
 
 CREATE DATABASE Empresa
@@ -51,6 +51,6 @@ CREATE TABLE Aluguel
 	IdAluguel INT PRIMARY KEY IDENTITY
 	,IdCliente INT FOREIGN KEY REFERENCES Cliente (IdCliente)
 	,IdVeiculo INT FOREIGN KEY REFERENCES Veiculos (IdVeiculo)
-	,DataInicio VARCHAR (100) NOT NULL
-	,DataFim VARCHAR (100) NOT NULL
+	,DataInicio DATE 
+	,DataFim DATE 
 )

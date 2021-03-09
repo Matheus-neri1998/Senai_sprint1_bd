@@ -1,22 +1,25 @@
--- Exercício 1.3 > Clinica - DQL --
+-- Exercício 1.3 > Clinica - DQL/JOINS --
 
 USE Clinica
 
-SELECT Nome, CRMV FROM Veterinarios;
+SELECT * FROM Donos -- Tabela Donos
 
-SELECT RazaoSocial FROM Clinicas;
+SELECT * FROM Clinicas -- Tabela Clinicas 
 
-SELECT Descricao FROM Racas
-WHERE IdRaca = 3;
+SELECT * FROM TiposPets -- Tabela TiposPets
 
-SELECT * FROM TiposPets;
+SELECT * FROM Racas -- Tabela Racas
 
-SELECT * FROM Donos;
+SELECT * FROM Pets -- Tabela Pets
 
-SELECT Endereco FROM Clinicas;
+SELECT * FROM Atendimentos -- Tabela Atendimentos
 
-SELECT Nome FROM Veterinarios
-WHERE IdVeterinario = 1;
+SELECT * FROM Veterinarios -- Tabela Veterinarios
 
-SELECT IdTipoPet FROM TiposPets
-SELECT Descricao FROM Racas;
+-- INNER JOIN
+
+SELECT * FROM Atendimentos
+INNER JOIN Pets
+ON Atendimentos.DataAtendimento = Pets.DataNascimento
+INNER JOIN Veterinarios
+ON Atendimentos.IdVeterinario = Veterinarios.IdVeterinario
