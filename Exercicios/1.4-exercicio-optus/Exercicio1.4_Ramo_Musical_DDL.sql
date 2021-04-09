@@ -12,6 +12,7 @@ CREATE TABLE Artistas
 	,Nome VARCHAR (200) NOT NULL
 );
 
+
 -- Tabela 2 - Estilos --
 CREATE TABLE Estilos
 (
@@ -19,24 +20,27 @@ CREATE TABLE Estilos
 	,Nome VARCHAR (200) NOT NULL
 );
 
--- Tabela 3 - Álbuns de Estilos --
-CREATE TABLE AlbunsEstilos
-(
-	IdAlbumEstilo INT PRIMARY KEY IDENTITY
-	,IdEstilo INT FOREIGN KEY REFERENCES Estilos (IdEstilo)
-);
 
 -- Tabela 4 - Álbuns --
 CREATE TABLE Albuns
 (
 	IdAlbum INT PRIMARY KEY IDENTITY
 	,Titulo VARCHAR (250) NOT NULL
-	,DataLancamento VARCHAR (100) NOT NULL
+	,DataLancamento DATE NOT NULL
 	,Localizacao VARCHAR (100) NOT NULL
-	,QtdMinutos VARCHAR (250) NOT NULL
-	,Ativo VARCHAR (100) NOT NULL
+	,QtdMinutos INT NOT NULL
+	,Ativo  BIT DEFAULT (1)
 	,IdArtista INT FOREIGN KEY REFERENCES Artistas (IdArtista)
 );
+
+
+-- Tabela 3 - Álbuns de Estilos --
+CREATE TABLE AlbunsEstilos
+(
+	IdAlbum INT FOREIGN KEY REFERENCES Albuns (IdAlbum) 
+	,IdEstilo INT FOREIGN KEY REFERENCES Estilos (IdEstilo)
+);
+
 
 -- Tabela 5 - Usuários --
 CREATE TABLE Usuarios
